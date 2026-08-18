@@ -8,7 +8,7 @@ Complete ICM (Interpretable Context Methodology) structure with Packaging Layer,
 - **_core/** — Conventions, packaging spec, voice, format guidelines
 - **workspaces/workspace-builder/** — Agent for scaffolding new projects
 - **projects/** — Your project folders (one per initiative)
-- **plugins/boom-icm-foundation/** — The `/boom-workspace-builder` skill, shipped as a plugin
+- **plugins/boom-icm-foundation/** — The `/boom:workspace-builder` skill, shipped as a plugin
 - **.claude-plugin/marketplace.json** — Makes this repo an installable Claude Code marketplace
 - **team/** — Team account rollout: enforced settings, admin runbook, member how-to
 
@@ -17,11 +17,11 @@ Complete ICM (Interpretable Context Methodology) structure with Packaging Layer,
 ### New device
 1. Clone this repo
 2. Claude Code reads CLAUDE.md automatically
-3. Run `/boom-workspace-builder` to start a project
+3. Run `/boom:workspace-builder` to start a project
 
 ### New project
 ```
-/boom-workspace-builder [project name]
+/boom:workspace-builder [project name]
 ```
 
 ### Read first
@@ -44,7 +44,7 @@ Read `_core/CONVENTIONS.md` for all 22 conventions. Key ones:
 - Push to GitHub
 - Team members clone
 - Layer 0 CLAUDE.md loads automatically
-- Run `/boom-workspace-builder` to scaffold new projects
+- Run `/boom:workspace-builder` to scaffold new projects
 
 ## Support
 
@@ -59,7 +59,7 @@ Read `_core/CONVENTIONS.md` for all 22 conventions. Key ones:
 
 ## Team account
 
-The whole team gets this method and the `/boom-workspace-builder` skill through the Claude Team account — nobody installs anything by hand.
+The whole team gets this method and the `/boom:workspace-builder` skill through the Claude Team account — nobody installs anything by hand.
 
 - **Admins:** `team/TEAM-SETUP.md` — deploy `team/managed-settings.json` once.
 - **Everyone else:** `team/HOW-TO-USE.md` — how to use the skill.

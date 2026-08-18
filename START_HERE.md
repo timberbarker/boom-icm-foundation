@@ -13,8 +13,8 @@ Three complete resources:
 | File | What it is | Read when |
 |------|-----------|-----------|
 | **BOOM_ICM_COMPLETE_WITH_PACKAGING.md** | Everything: folder structure, templates, conventions 1–22, packaging spec, workspace builder | Setting up a new device OR need the full spec |
-| **WORKSPACE_BUILDER_README.md** | When to use the `/boom-workspace-builder` skill, what it asks, what you get back | Starting a new project |
-| **team/HOW-TO-USE.md** | The `/boom-workspace-builder` skill — how it arrives and how to run it | Using the skill |
+| **WORKSPACE_BUILDER_README.md** | When to use the `/boom:workspace-builder` skill, what it asks, what you get back | Starting a new project |
+| **team/HOW-TO-USE.md** | The `/boom:workspace-builder` skill — how it arrives and how to run it | Using the skill |
 
 ---
 
@@ -31,7 +31,7 @@ Three complete resources:
 ### New project? (5–15 min)
 
 1. Read **WORKSPACE_BUILDER_README.md** (when-to-use guide)
-2. Run `/boom-workspace-builder [project name]`
+2. Run `/boom:workspace-builder [project name]`
 3. Answer five questions (discovery + mapping)
 4. Get back a complete project folder
 5. Commit and start work
@@ -122,7 +122,7 @@ These three are enough. Everything else (folder structure, workspace builder) yo
 ```
 You're starting a new project
          ↓
-Use /boom-workspace-builder
+Use /boom:workspace-builder
          ↓
 Builder asks: who, what, why, when, data scope (Stage 01)
 Builder asks: what stages, what systems (Stage 02)
@@ -231,7 +231,7 @@ plugins/boom-icm-foundation/               ← The skill, shipped as a plugin
 1. **Read this file** ✓ (you're doing it)
 2. **Read WORKSPACE_BUILDER_README.md** (5 min) if you're starting a project, or
 3. **Read BOOM_ICM_COMPLETE_WITH_PACKAGING.md Part 8** if you're setting up a new device
-4. **Run `/boom-workspace-builder`** when you're ready to create a project
+4. **Run `/boom:workspace-builder`** when you're ready to create a project
 5. **Commit** and start working
 
 Done.

@@ -61,11 +61,11 @@ Do not execute, write outside the tree, or connect a server before `boundary.md`
 ## Next steps
 
 1. Read `_core/CONVENTIONS.md` for the full rule set
-2. Use `/boom-workspace-builder` to scaffold new projects
+2. Use `/boom:workspace-builder` to scaffold new projects
 3. Work stages in order (01 → 02 → 03…)
 
 ## Team rollout
 
 - `team/TEAM-SETUP.md` — admin: deploy the enforced settings once
-- `team/HOW-TO-USE.md` — every member: how to use `/boom-workspace-builder`
+- `team/HOW-TO-USE.md` — every member: how to use `/boom:workspace-builder`
 - `team/managed-settings.json` — the enforced file to paste into the admin console

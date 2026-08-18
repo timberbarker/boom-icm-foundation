@@ -1,7 +1,0 @@
-{
-  "name": "boom-icm-foundation",
-  "version": "2.0.0",
-  "description": "Boom ICM foundation v2 (Interpretable Context Methodology + Packaging Layer). Provides /boom-workspace-builder, which scaffolds a new Boom project through discovery, mapping, scaffolding, packaging, stage contracts, and convention validation. Applies when starting or restructuring any Boom project.",
-  "author": { "name": "Boom Interactive" },
-  "homepage": "https://github.com/timberbarker/boom-icm-foundation"
-}

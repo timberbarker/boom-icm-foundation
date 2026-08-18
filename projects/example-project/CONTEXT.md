@@ -2,7 +2,7 @@
 
 Purpose: Reference project showing the ICM structure in use.
 
-Note: This is a placeholder. Replace with your actual project when you scaffold a new one using `/boom-workspace-builder`.
+Note: This is a placeholder. Replace with your actual project when you scaffold a new one using `/boom:workspace-builder`.
 
 Inputs: From workspace builder stages 01-05
 

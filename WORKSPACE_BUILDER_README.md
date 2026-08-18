@@ -4,14 +4,14 @@
 
 **When:** You're starting a new initiative, especially one that's shared, scheduled, or client-facing.
 
-**Invocation:** `/boom-workspace-builder` or `/boom-workspace-builder [project name]`
+**Invocation:** `/boom:workspace-builder` or `/boom:workspace-builder [project name]`
 
 ---
 
 ## TL;DR
 
 ```
-/boom-workspace-builder
+/boom:workspace-builder
 ```
 
 Answer questions about your initiative. Get back a complete project folder that meets all 22 ICM conventions. Five minutes.
@@ -67,7 +67,7 @@ Stage 05: Validation   ← Automated: verifies everything passes conventions 1�
 
 | Situation | Use this | Why |
 |-----------|----------|-----|
-| Starting a new project, shared or client-facing | `/boom-workspace-builder` | Enforces packaging upfront; guides you through all decisions |
+| Starting a new project, shared or client-facing | `/boom:workspace-builder` | Enforces packaging upfront; guides you through all decisions |
 | Quick prototype, solo, disposable | `/icm-architect` | Faster; no packaging overhead |
 | Turning an idea into a structure (general) | `/icm-architect` | More flexible than the builder |
 | Existing project needs `_agent/` folder | Manual (10 min) | Just create the seven files; no scaffolding needed |
@@ -201,7 +201,7 @@ The builder verifies:
 
 ### Scenario 1: Start a new client project
 ```
-/boom-workspace-builder Client Name — Platform Name
+/boom:workspace-builder Client Name — Platform Name
 ```
 Builder will ask for:
 - Client data scope (what can we touch?)
@@ -211,7 +211,7 @@ Builder will ask for:
 
 ### Scenario 2: Start an internal dashboard
 ```
-/boom-workspace-builder Internal Analytics Dashboard
+/boom:workspace-builder Internal Analytics Dashboard
 ```
 Builder will ask for:
 - Who uses it? (one team or many?)
@@ -221,7 +221,7 @@ Builder will ask for:
 
 ### Scenario 3: Start a shared research workspace
 ```
-/boom-workspace-builder Research — Competitor Analysis
+/boom:workspace-builder Research — Competitor Analysis
 ```
 Builder will ask for:
 - Team members (who can run this?)
@@ -271,7 +271,7 @@ Stop after Stage 02 (mapping). If mapping is wrong, you can scrap and restart th
 ## Integration
 
 This skill is part of your Boom foundation. It lives in:
-- **As a skill:** `plugins/boom-icm-foundation/skills/boom-workspace-builder/SKILL.md`, delivered to the whole team through the Claude Team account (see `team/HOW-TO-USE.md`)
+- **As a skill:** `plugins/boom/skills/workspace-builder/SKILL.md`, delivered to the whole team through the Claude Team account (see `team/HOW-TO-USE.md`)
 - **As a workspace:** `workspaces/workspace-builder/` (manual fallback if the skill is unavailable)
 
 If the skill doesn't load, you can still run the builder manually:

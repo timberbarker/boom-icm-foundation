@@ -1,4 +1,4 @@
-# How to use `/boom-workspace-builder`
+# How to use `/boom:workspace-builder`
 
 For everyone on the Boom Claude Team account. Read once, five minutes.
 
@@ -12,7 +12,7 @@ Check it worked:
 /plugin
 ```
 
-`boom-icm-foundation` should be listed as enabled.
+`boom` should be listed as enabled.
 
 ## What you get automatically
 
@@ -23,13 +23,13 @@ If you open Claude in a repo with no conforming root `CLAUDE.md`, you get a `[bo
 ## Use it whenever you start a project
 
 ```bash
-/boom-workspace-builder
+/boom:workspace-builder
 ```
 
 Or name it up front:
 
 ```bash
-/boom-workspace-builder savills-fm-pilot
+/boom:workspace-builder savills-fm-pilot
 ```
 
 Run it from the `boom-icm-foundation` repo, or any repo scaffolded from it. It creates `projects/<name>/`.

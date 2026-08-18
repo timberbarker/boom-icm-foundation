@@ -1,6 +1,6 @@
 ---
-name: boom-workspace-builder
-description: Scaffold a new Boom project as an ICM workspace with the Packaging Layer. Use at the START of any new Boom initiative, or when the user says "new project", "scaffold a workspace", "set up a project folder", "/boom-workspace-builder", or asks how to structure work so Claude can run it. Walks discovery → mapping → scaffolding → packaging (_agent/) → stage contracts → validation, and refuses to finish until all 22 ICM conventions pass. Also use when a shared, scheduled, or client-facing workspace is missing its _agent/ folder.
+name: workspace-builder
+description: Scaffold a new Boom project as an ICM workspace with the Packaging Layer. Use at the START of any new Boom initiative, or when the user says "new project", "scaffold a workspace", "set up a project folder", "/boom:workspace-builder", or asks how to structure work so Claude can run it. Walks discovery → mapping → scaffolding → packaging (_agent/) → stage contracts → validation, and refuses to finish until all 22 ICM conventions pass. Also use when a shared, scheduled, or client-facing workspace is missing its _agent/ folder.
 ---
 
 # Boom workspace builder
