@@ -14,7 +14,7 @@ Three complete resources:
 |------|-----------|-----------|
 | **BOOM_ICM_COMPLETE_WITH_PACKAGING.md** | Everything: folder structure, templates, conventions 1–22, packaging spec, workspace builder | Setting up a new device OR need the full spec |
 | **WORKSPACE_BUILDER_README.md** | When to use the `/boom-workspace-builder` skill, what it asks, what you get back | Starting a new project |
-| **boom-workspace-builder-skill.md** | The skill itself (copy to `.claude/skills/`) | Installing the skill |
+| **team/HOW-TO-USE.md** | The `/boom-workspace-builder` skill — how it arrives and how to run it | Using the skill |
 
 ---
 
@@ -38,8 +38,8 @@ Three complete resources:
 
 ### New team member?
 
-1. Share this file + **BOOM_ICM_COMPLETE_WITH_PACKAGING.md**
-2. They run the new-device checklist
+1. Send them **team/HOW-TO-USE.md** — the skill is already on their Claude via the Team account
+2. Send this file + **BOOM_ICM_COMPLETE_WITH_PACKAGING.md** for the full method
 3. They run the builder for their first project
 4. Done
 
@@ -92,16 +92,16 @@ The workspace builder enforces this automatically. When you scaffold a new proje
 
 **Read when:** You're about to start a new project or want to know if the builder is right for you
 
-### boom-workspace-builder-skill.md
+### team/HOW-TO-USE.md
 
-- Skill description and invocation
-- When to use it
+- How the skill reaches you (Team account, no install)
+- Invocation and what it asks
+- The four human checkpoints
 - Output structure
-- Step-by-step walkthrough (all five stages)
-- Common questions
-- Next steps
+- When not to use it
+- Troubleshooting
 
-**Read when:** You're installing the skill or need quick reference
+**Read when:** You're about to run the skill, or it isn't showing up
 
 ---
 
@@ -209,7 +209,7 @@ Run the builder on a small project. Show them the output. Say:
 → Read BOOM_ICM_COMPLETE_WITH_PACKAGING.md Part 6 (PACKAGING.md section)
 
 **"How do I install the workspace builder skill?"**
-→ Copy boom-workspace-builder-skill.md to `.claude/skills/boom-workspace-builder.md`
+→ You don't. It arrives through the Claude Team account. See `team/HOW-TO-USE.md`.
 
 ---
 
@@ -219,7 +219,9 @@ Run the builder on a small project. Show them the output. Say:
 START_HERE.md                              ← You are here
 BOOM_ICM_COMPLETE_WITH_PACKAGING.md        ← Everything (specs, templates, conventions)
 WORKSPACE_BUILDER_README.md                ← When/how to use the builder skill
-boom-workspace-builder-skill.md            ← The skill definition (copy to .claude/skills/)
+team/TEAM-SETUP.md                         ← Admin: deploy to the Claude Team account (once)
+team/HOW-TO-USE.md                         ← Everyone: how to use the skill
+plugins/boom-icm-foundation/               ← The skill, shipped as a plugin
 ```
 
 ---

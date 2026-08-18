@@ -1,0 +1,12 @@
+{
+  "name": "boom-icm",
+  "owner": { "name": "Boom Interactive" },
+  "plugins": [
+    {
+      "name": "boom-icm-foundation",
+      "source": "./plugins/boom-icm-foundation",
+      "description": "Boom ICM foundation v2 — scaffold any new Boom project into an ICM workspace with the Packaging Layer (_agent/), stage contracts, evals, and all 22 conventions validated.",
+      "version": "2.0.0"
+    }
+  ]
+}

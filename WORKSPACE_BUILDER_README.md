@@ -271,8 +271,8 @@ Stop after Stage 02 (mapping). If mapping is wrong, you can scrap and restart th
 ## Integration
 
 This skill is part of your Boom foundation. It lives in:
-- **As a skill:** `.claude/skills/boom-workspace-builder.md`
-- **As a workspace:** `workspaces/workspace-builder/` (manual fallback if skill unavailable)
+- **As a skill:** `plugins/boom-icm-foundation/skills/boom-workspace-builder/SKILL.md`, delivered to the whole team through the Claude Team account (see `team/HOW-TO-USE.md`)
+- **As a workspace:** `workspaces/workspace-builder/` (manual fallback if the skill is unavailable)
 
 If the skill doesn't load, you can still run the builder manually:
 ```bash
