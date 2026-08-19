@@ -1,0 +1,61 @@
+# Boom ICM gate. Lives here for this repo; also register as an ORG-REQUIRED workflow
+# so every Boom repo is checked. Blocks merge when a repo or a project doesn't conform.
+name: boom-icm-check
+on:
+  pull_request:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  conform:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Root CLAUDE.md conforms
+        shell: bash
+        run: |
+          FILE="CLAUDE.md"
+          fail(){ echo "::error::boom-icm: $1"; exit 1; }
+          [ -f "$FILE" ] || fail "no root CLAUDE.md. Every Boom repo needs one (see timberbarker/boom-icm-foundation)."
+          grep -qi "routing table"    "$FILE" || fail "CLAUDE.md missing a routing table."
+          grep -qi "60/30/10"         "$FILE" || fail "CLAUDE.md missing the 60/30/10 triage."
+          grep -qiE "^## Rules"       "$FILE" || fail "CLAUDE.md missing the Rules block."
+          grep -qi "never self-merge" "$FILE" || fail "CLAUDE.md missing the no-self-merge rule."
+          echo "boom-icm: root CLAUDE.md conforms."
+
+      - name: Projects carry the Packaging Layer
+        shell: bash
+        run: |
+          # projects/example-project ships as the blank template — excluded on purpose.
+          EXCLUDE="example-project"
+          status=0
+          [ -d projects ] || { echo "boom-icm: no projects/ directory, nothing to check."; exit 0; }
+          for d in projects/*/; do
+            name=$(basename "$d")
+            [ "$name" = "$EXCLUDE" ] && continue
+            if [ -f "$d/_agent/EXEMPT.md" ]; then
+              echo "boom-icm: $name exempt (personal scratch)."
+              continue
+            fi
+            for f in definition.md identity.md boundary.md connectors.md guards.md invocation.md; do
+              if [ ! -f "$d/_agent/$f" ]; then
+                echo "::error::boom-icm: $name is missing _agent/$f (or an _agent/EXEMPT.md)."
+                status=1
+              fi
+            done
+            if [ -f "$d/_agent/definition.md" ] && ! grep -qiE "^Primary:[[:space:]]*\S" "$d/_agent/definition.md"; then
+              echo "::error::boom-icm: $name _agent/definition.md names no model."
+              status=1
+            fi
+            if [ ! -f "$d/CONTEXT.md" ]; then
+              echo "::error::boom-icm: $name has no CONTEXT.md."
+              status=1
+            fi
+            if grep -rqlE '\[(TODO|name|person|Stage Name|Step 1)\]' "$d" 2>/dev/null; then
+              echo "::error::boom-icm: $name still contains placeholder text."
+              status=1
+            fi
+          done
+          [ $status -eq 0 ] && echo "boom-icm: all projects conform."
+          exit $status

@@ -15,6 +15,10 @@ All work is structured as an agent-runnable folder: L0 `CLAUDE.md` (routing tabl
 - Human review between stage handoffs; outputs land in each stage's `output/`
 - Stages work in order (01→02→03…)
 
+## Triage — before reaching for AI
+
+Stop at the first yes. Deterministic → spreadsheet, database, or script. If/then rule → automation (Zapier, Make, n8n). Judgment across unstructured information → AI. That is the 60/30/10 split. A VLOOKUP doesn't hallucinate.
+
 ## Voice
 
 US English always. Plain, direct, product-driven. See `_core/VOICE.md`.
@@ -57,5 +61,11 @@ Do not execute, write outside the tree, or connect a server before `boundary.md`
 ## Next steps
 
 1. Read `_core/CONVENTIONS.md` for the full rule set
-2. Use `/boom-workspace-builder` to scaffold new projects
+2. Use `/boom:workspace-builder` to scaffold new projects
 3. Work stages in order (01 → 02 → 03…)
+
+## Team rollout
+
+- `team/TEAM-SETUP.md` — admin: deploy the enforced settings once
+- `team/HOW-TO-USE.md` — every member: how to use `/boom:workspace-builder`
+- `team/managed-settings.json` — the enforced file to paste into the admin console

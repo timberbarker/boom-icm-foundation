@@ -1,0 +1,34 @@
+{
+  "$comment": "Boom ICM foundation v2 — ENFORCED Claude Code settings. Deliver via claude.ai Admin > Claude Code > Managed settings (Team/Enterprise, server-managed), or push to the endpoint path (macOS /Library/Application Support/ClaudeCode/managed-settings.json, Windows C:\\Program Files\\ClaudeCode\\managed-settings.json) via MDM. Highest precedence: members cannot override. Replaces the older boom-foundation@boom rollout.",
+
+  "permissions": {
+    "deny": [
+      "Bash(git merge:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(git push --force:*)",
+      "Bash(git push --force-with-lease:*)"
+    ]
+  },
+
+  "extraKnownMarketplaces": {
+    "boom-icm": {
+      "source": { "source": "github", "repo": "timberbarker/boom-icm-foundation" }
+    }
+  },
+  "enabledPlugins": { "boom@boom-icm": true },
+
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash -c 'f=CLAUDE.md; if [ ! -f \"$f\" ] || ! grep -qi \"routing table\" \"$f\"; then echo \"[boom-icm] No conforming root CLAUDE.md here. Boom projects are ICM workspaces. Run /boom:workspace-builder, or scaffold from github.com/timberbarker/boom-icm-foundation.\"; fi'"
+          }
+        ]
+      }
+    ]
+  },
+
+  "claudeMd": "# Boom standing rules (org-managed)\n\n## Method — ICM v2 (Interpretable Context Methodology + Packaging Layer)\nEvery Boom project is an ICM workspace. One agent walks folders and markdown. No multi-agent frameworks.\nLayers: L0 root CLAUDE.md (routing table — read first) -> L1/L2 workspace and stage CONTEXT.md -> L3 _core/ (voice, format, constraints, conventions, packaging) -> L4 stage outputs and source material.\nStage contracts have six fields: Purpose / Inputs / Process / Output / Done-looks-like / Failure modes. Stages run in order (01 -> 02 -> 03). Human review between stages. Outputs land in each stage's output/. Files stay under eighty lines.\n\n## Starting or structuring a project\nUse the /boom:workspace-builder skill. Do not hand-roll a project folder. Do not scaffold stages before _agent/definition.md exists.\nSource of truth: github.com/timberbarker/boom-icm-foundation (22 conventions in _core/CONVENTIONS.md, packaging spec in _core/PACKAGING.md).\n\n## Packaging (the rule)\nAny workspace that can be run by someone other than its author, on any schedule other than a human typing, or against data other than the author's own, must carry _agent/ with definition.md, identity.md, boundary.md, connectors.md, guards.md, invocation.md. Failing all three tests means personal scratch — label it _agent/EXEMPT.md.\nStop and ask the human before: writing outside the tree when boundary.md does not permit it; adding a connector absent from connectors.md; adding a schedule absent from invocation.md; handing a workspace to a client while identity.md still says single author.\n\n## Triage — run this before reaching for AI (stop at the first yes)\nDeterministic -> spreadsheet, database, or script. If/then rule -> automation (Zapier, Make, n8n). Judgment across unstructured information -> AI. A VLOOKUP doesn't hallucinate.\n\n## Rules (do not remove)\n- NEVER self-merge PRs. Open with CI green and hand to the team.\n- Every repo has a conforming root CLAUDE.md (routing table, Rules block, no-self-merge, 60/30/10). CI blocks merge without it.\n- Failures become evals: log them as tasks under evals/tasks/.\n- Ask before writing finished docs to shared drives.\n- GitHub is the source of truth. One canonical local folder per project. No git repos in Drive or OneDrive.\n- Cite links, not local file paths, when sharing with others.\n- Don't conflate projects — cs3d.ai, FM Dashboard, Customer Dashboard, Investor Portal, Company Dashboard, boominc.ai are separate.\n- Any new cs3d.ai page or copy gets localized into every active language, never English-only.\n\n## Voice\nUS English always. Plain, direct, product-driven. No filler, no hedging. Recommend a path; don't survey options. Keep it short. One idea per sentence. Don't recap work in detail — a one-line result is enough unless asked.\nUse the approved Boom boilerplate verbatim wherever a 'what Boom is' paragraph appears."
+}
